@@ -13,6 +13,7 @@ public class ConversaoMoeda {
     private double librasEsterlinas = 6.00;
     private double pesoArgentino = 0.04;
     private double pesoChileno = 0.0057;
+    private Moedas moedas = new Moedas();
 
     public String resultadoDaConversao(Object moedaUm, double valorInput) {
 
@@ -22,57 +23,57 @@ public class ConversaoMoeda {
 
         // INICIO DA CONVERSÃO DE REAIS PARA A MOEDA ESCOLHIDA
 
-        if (moedaUm == "De Reais a Euros") {
+        if (moedaUm == this.moedas.getMoedas()[0]) {
             this.resultado = valorInput / this.euro;
             return this.msg += "€ " + df.format(this.resultado);
 
         }
 
-        else if (moedaUm == "De Reais a Dolares") {
+        else if (moedaUm == this.moedas.getMoedas()[1]) {
             this.resultado = valorInput / this.dolar;
-            return msg += "US$ " + df.format(this.resultado);
+            return this.msg += "US$ " + df.format(this.resultado);
         }
 
-        else if (moedaUm == "De Reais a Libras Esterlinas") {
+        else if (moedaUm == this.moedas.getMoedas()[2]) {
             this.resultado = valorInput / this.librasEsterlinas;
-            return msg += "£ " + df.format(this.resultado);
+            return this.msg += "£ " + df.format(this.resultado);
         }
 
-        else if (moedaUm == "De Reais a Peso Argentino") {
+        else if (moedaUm == this.moedas.getMoedas()[3]) {
             this.resultado = valorInput / this.pesoArgentino;
-            return msg += "$ " + df.format(this.resultado);
+            return this.msg += "$ " + df.format(this.resultado);
         }
 
-        else if (moedaUm == "De Reais a Peso chileno") {
+        else if (moedaUm == this.moedas.getMoedas()[4]) {
             this.resultado = valorInput / this.pesoChileno;
-            return msg += "CLP$ " + df.format(this.resultado);
+            return this.msg += "CLP$ " + df.format(this.resultado);
 
         }
 
         // INICIO DA CONVERSÃO DA MOEDA ESCOLHIDA PARA REAL
 
-        else if (moedaUm == "De Euros a Reais") {
+        else if (moedaUm == this.moedas.getMoedas()[5]) {
             this.resultado = valorInput * this.euro;
-            return msg += reais + df.format(this.resultado);
+            return this.msg += this.reais + df.format(this.resultado);
         }
 
-        else if (moedaUm == "De Dolares a Reais") {
+        else if (moedaUm == this.moedas.getMoedas()[6]) {
             this.resultado = valorInput * this.dolar;
-            return msg += reais + df.format(this.resultado);
+            return this.msg += this.reais + df.format(this.resultado);
         }
 
-        else if (moedaUm == "De Libras Esterlinas a Reais") {
+        else if (moedaUm == this.moedas.getMoedas()[7]) {
             this.resultado = valorInput * this.librasEsterlinas;
-            return msg += reais + df.format(this.resultado);
+            return this.msg += this.reais + df.format(this.resultado);
         }
 
-        else if (moedaUm == "De Peso Argentino a Reais") {
+        else if (moedaUm == this.moedas.getMoedas()[8]) {
             this.resultado = valorInput * this.pesoArgentino;
-            return msg += reais + df.format(this.resultado);
+            return this.msg += this.reais + df.format(this.resultado);
 
-        } else if (moedaUm == "De Peso chileno a Reais") {
+        } else if (moedaUm == this.moedas.getMoedas()[9]) {
             this.resultado = valorInput * this.pesoChileno;
-            return msg += reais + df.format(this.resultado);
+            return this.msg += this.reais + df.format(this.resultado);
         };
 
         return this.msg = "Valor Invalido!";

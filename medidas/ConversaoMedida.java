@@ -6,20 +6,20 @@ public class ConversaoMedida {
     private double metrosCentimetros = 100;
     private double centimetrosMilimetros = 10;
     private double resultado;
-
+    private Medidas medidas = new Medidas();
     public String resultadoDaMedida(Object medida, double medidaUsuario) {
 
-        if (medida == "KM para Metros") {
+        if (medida == this.medidas.getMedidas()[0]) {
             this.resultado = medidaUsuario * this.kmMetros;
             this.msg = this.resultado + " Metros";
             return this.msg;
 
-        } else if (medida == "Metros para Centímetros") {
+        } else if (medida == this.medidas.getMedidas()[1]) {
             this.resultado = medidaUsuario * this.metrosCentimetros;
             this.msg = this.resultado + " Centimetros";
             return this.msg;
 
-        } else if (medida == "Centímetros para Milímetros") {
+        } else if (medida == this.medidas.getMedidas()[2]) {
             this.resultado = medidaUsuario * this.centimetrosMilimetros;
             this.msg = this.resultado + " Milímetros";
             return this.msg;
